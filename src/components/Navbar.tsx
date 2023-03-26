@@ -36,7 +36,7 @@ const styles = {
   `
 };
 
-export default function Navbar({ products, setProducts }: any) {
+export default function Navbar({ showSearch, setProducts }: any) {
   const productsContext = useContext(ProductsContext);
 
   const searchProducts = (e: any) => {
@@ -56,17 +56,17 @@ export default function Navbar({ products, setProducts }: any) {
   return (
     <nav className={styles.navbarContainer}>
       <Link to='/'>
-        <label className={styles.logo}>LOGO</label>
+        <label className={styles.logo}>SHOP</label>
       </Link>
       <div
         className={styles.navItems}
       >
-        <input
+        {showSearch && <input
           type='text'
           onChange={searchProducts}
           className={styles.searchBox}
           placeholder='Search'
-        />
+        />}
         <Link to='/cart'>
           <BiCart size={20} className={styles.navItem} />
         </Link>

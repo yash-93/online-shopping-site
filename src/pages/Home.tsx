@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar products={products} setProducts={setProducts} />
+      <Navbar showSearch={true} setProducts={setProducts} />
       <Container>
         {
           //@ts-ignore
